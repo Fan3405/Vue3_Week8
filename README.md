@@ -1,4 +1,4 @@
-# Vue3_Week7_網頁美感大揭密
+# Vue3_Week8_實戰全攻略
 GitHub Pages:https://fan3405.github.io/Vue3_Week8/
 
 # Vue Template
