@@ -218,15 +218,6 @@ export default {
           });
         });
     },
-    filterProducts1(category) {
-      const filter = [];
-      this.products.forEach((item) => {
-        if (item.category === category) {
-          filter.push(item);
-        }
-      });
-      this.products = filter;
-    },
   },
   mounted() {
     this.getProducts();
@@ -260,20 +251,7 @@ export default {
 
 .fire {
   transform: scale(1.3);
-  // animation: fire 5s ease-in-out infinite;
 }
-
-// @keyframes fire {
-//   0% {
-//     scale: 1;
-//   }
-//   50% {
-//     scale: 1.3;
-//   }
-//   100% {
-//     scale: 1;
-//   }
-// }
 
 @media (max-width: 992px) {
   .meat {
@@ -293,8 +271,6 @@ export default {
     }
     .fire {
       width: 30%;
-      // height: 80px;
-      // transform: scale(2);
     }
   }
 }
