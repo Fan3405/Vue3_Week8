@@ -13,7 +13,7 @@
           <small class="text-muted">{{ date(article.create_at) }}</small> -
           <small class="text-muted">作者：{{ article.author }}</small>
         </p>
-        <img :src="article.imageUrl" alt="" width="500" height="500" class="object-fit mb-3" />
+        <img :src="article.imageUrl" height="500" class="w-100 object-fit mb-3" />
         <div v-html="article.content"></div>
       </article>
     </div>

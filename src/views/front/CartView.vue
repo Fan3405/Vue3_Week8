@@ -92,7 +92,7 @@
         </button>
       </div>
     </div>
-    <RouterLink :to="`/cart/check`" class="btn btn-outline-primary float-end" v-if="cart?.carts?.length">下一步</RouterLink>
+    <RouterLink :to="`/cart/check`" class="btn btn-outline-primary float-end mt-2" v-if="cart?.carts?.length">下一步</RouterLink>
   </div>
 </template>
 
