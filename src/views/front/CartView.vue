@@ -192,7 +192,6 @@ export default {
         });
     },
     addCouponCode() {
-      this.couponText = true;
       this.couponLoading = true;
       const coupon = {
         code: this.coupon_code,
@@ -200,6 +199,7 @@ export default {
       this.$http
         .post(`${VITE_APP_URL}v2/api/${VITE_APP_PATH}/coupon`, { data: coupon })
         .then((response) => {
+          this.couponText = true;
           this.couponLoading = false;
           this.getCarts();
           Swal.fire({
@@ -214,6 +214,7 @@ export default {
             icon: 'error',
             confirmButtonText: 'OK',
           });
+          this.couponLoading = false;
         });
     },
   },
