@@ -100,24 +100,23 @@
               </div>
             </div>
             <!-- col-sm-6 end -->
-
-            <div v-if="product" class="row flex-row-reverse justify-content-between my-5">
-              <div data-aos="fade-up-left" data-aos-offset="180" data-aos-once="false" class="col-md-6 p-0">
-                <img
-                  src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1679035708365.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Z5aK2CO3Vo3fWnJWXsvh4boai%2FTLAavmGMAggqyLl9D8E4hKmDaF0O9zzLQp2tLVYyPYwn%2Ff7C%2FvWWVomz%2BRX64xRbkChlxZ55FMpVrIf6JB%2BRXaAGxN5%2By29d5pov%2FYbiojWT57II5aBthPOABtschk2LRUGx68k4PJ9%2FZ4WFkDzj1auAi5CreZwWvYZvTuTWhOpLoXxeTOnVpMU1fpr%2BQ4atObuwzIwZdag5U6JjRO4S%2BmMbS6Yn13udUW54v%2B0VpYT2casTdLIscUl6hV07Ncpf2mC5sN7bX9p%2FgCFAenElwivlE0ZQTyU%2BsjXPlRi%2BCqWSaoaoEplOC7OAS4TQ%3D%3D"
-                  alt="新鮮食材"
-                  class="w-100 object-fit"
-                  height="400"
-                />
-              </div>
-              <div data-aos="fade-up-right" data-aos-offset="180" data-aos-once="false" class="col-md-4 m-auto text-center">
-                <h4 class="mt-4 fw-bold">食安疑慮</h4>
-                <p class="lh-lg">
-                  【
-                  我們對食材有很高的品質要求和更嚴格的監管，對於食品產品安全性的擔憂和質疑，我們能保證不會使用低質或有問題的原材料或成分，每天堅持使用新鮮的食材來烹製每一道菜品
-                  】
-                </p>
-              </div>
+          </div>
+          <div v-if="product" class="row flex-row-reverse justify-content-between my-5">
+            <div data-aos="fade-up-left" data-aos-offset="180" data-aos-once="false" class="col-md-6 p-0">
+              <img
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1679035708365.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Z5aK2CO3Vo3fWnJWXsvh4boai%2FTLAavmGMAggqyLl9D8E4hKmDaF0O9zzLQp2tLVYyPYwn%2Ff7C%2FvWWVomz%2BRX64xRbkChlxZ55FMpVrIf6JB%2BRXaAGxN5%2By29d5pov%2FYbiojWT57II5aBthPOABtschk2LRUGx68k4PJ9%2FZ4WFkDzj1auAi5CreZwWvYZvTuTWhOpLoXxeTOnVpMU1fpr%2BQ4atObuwzIwZdag5U6JjRO4S%2BmMbS6Yn13udUW54v%2B0VpYT2casTdLIscUl6hV07Ncpf2mC5sN7bX9p%2FgCFAenElwivlE0ZQTyU%2BsjXPlRi%2BCqWSaoaoEplOC7OAS4TQ%3D%3D"
+                alt="新鮮食材"
+                class="w-100 object-fit"
+                height="400"
+              />
+            </div>
+            <div data-aos="fade-up-right" data-aos-offset="180" data-aos-once="false" class="col-md-4 m-auto text-center">
+              <h4 class="mt-4 fw-bold">食安疑慮</h4>
+              <p class="lh-lg">
+                【
+                我們對食材有很高的品質要求和更嚴格的監管，對於食品產品安全性的擔憂和質疑，我們能保證不會使用低質或有問題的原材料或成分，每天堅持使用新鮮的食材來烹製每一道菜品
+                】
+              </p>
             </div>
           </div>
         </div>
