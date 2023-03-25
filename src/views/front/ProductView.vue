@@ -102,7 +102,7 @@
             <!-- col-sm-6 end -->
           </div>
           <div v-if="product" class="row flex-row-reverse justify-content-between my-5">
-            <div data-aos="fade-up-left" data-aos-offset="180" data-aos-once="false" class="col-md-6 p-0">
+            <div data-aos="fade-up-left" class="col-md-6 p-0">
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1679035708365.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Z5aK2CO3Vo3fWnJWXsvh4boai%2FTLAavmGMAggqyLl9D8E4hKmDaF0O9zzLQp2tLVYyPYwn%2Ff7C%2FvWWVomz%2BRX64xRbkChlxZ55FMpVrIf6JB%2BRXaAGxN5%2By29d5pov%2FYbiojWT57II5aBthPOABtschk2LRUGx68k4PJ9%2FZ4WFkDzj1auAi5CreZwWvYZvTuTWhOpLoXxeTOnVpMU1fpr%2BQ4atObuwzIwZdag5U6JjRO4S%2BmMbS6Yn13udUW54v%2B0VpYT2casTdLIscUl6hV07Ncpf2mC5sN7bX9p%2FgCFAenElwivlE0ZQTyU%2BsjXPlRi%2BCqWSaoaoEplOC7OAS4TQ%3D%3D"
                 alt="新鮮食材"
