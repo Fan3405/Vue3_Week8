@@ -90,4 +90,12 @@ const router = createRouter({
   },
 });
 
+// 使用Vue Router提供的全域導航守衛afterEach，在每次路由切換後關閉RWD button
+router.afterEach(() => {
+  const navbar = document.querySelector('.navbar-collapse');
+  if (navbar.classList.contains('show')) {
+    navbar.classList.remove('show');
+  }
+});
+
 export default router;
