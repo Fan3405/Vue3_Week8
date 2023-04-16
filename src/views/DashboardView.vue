@@ -38,8 +38,11 @@
       </ul>
     </div>
   </nav>
-  <!-- 預設隱藏 RouterView ，當函式 checkAdmin 有驗證通過時再將 RouterView 顯示出來。 -->
-  <RouterView v-if="check" />
+  <!-- 將內容設定高度，固定footer在底部 -->
+  <div class="min-vh-100">
+    <!-- 預設隱藏 RouterView ，當函式 checkAdmin 有驗證通過時再將 RouterView 顯示出來。 -->
+    <RouterView v-if="check" />
+  </div>
   <footer class="bg-primary">
     <div class="container text-center py-4">
       <p class="m-0 text-white letterSpacing">聯絡我們</p>
@@ -96,7 +99,7 @@ export default {
       } else {
         Swal.fire({
           title: '您尚未登入',
-          icon: 'error',
+          icon: 'info',
           confirmButtonText: 'OK',
         });
         this.$router.push('/login');

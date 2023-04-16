@@ -47,7 +47,6 @@
               {{ item.product.title }}
               <div v-if="couponText" class="fw-bold text-success">已套用優惠券{{ coupon_code }}</div>
             </td>
-
             <td>
               <div class="input-group input-group-sm">
                 <!-- v-model="item.qty"綁定值 -->
@@ -71,7 +70,6 @@
           ><RouterLink to="/products" class="ms-3 btn btn-primary text-light fw-bold">快去看菜單~</RouterLink>
         </template>
       </tbody>
-
       <tfoot>
         <tr>
           <td colspan="5" class="text-end">總計</td>
@@ -111,10 +109,11 @@ export default {
       coupon_code: '',
       couponText: false, // 顯示折扣優惠券字樣使用
       couponLoading: false, // 優惠券loading使用
+      qty: null,
     };
   },
   methods: {
-    ...mapActions(cartStore, ['getCarts']),
+    ...mapActions(cartStore, ['getCarts', 'qtyMax']),
     updateCartItem(item) {
       // 需要傳入後端的資料格式，data裡要帶的是產品id
       const data = {
@@ -125,6 +124,10 @@ export default {
       };
       // 將id存起來
       this.loadingItem = item.id;
+
+      // 將數量存起來
+      this.qtyMax(item.qty);
+
       // put裡要帶的是購物車id
       this.$http
         .put(`${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart/${item.id}`, data)

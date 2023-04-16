@@ -27,7 +27,7 @@
               <div class="mb-3">
                 <label for="image" class="form-label">輸入圖片網址</label>
                 <input type="text" class="form-control" id="image" v-model="tempArticle.imageUrl" placeholder="請輸入圖片連結" />
-                <img class="img-fluid" :src="tempArticle.imageUrl" />
+                <img class="img-fluid" :src="tempArticle.imageUrl" alt="文章圖片" />
               </div>
               <div class="mb-3">
                 <label for="author" class="form-label">作者</label>
@@ -56,7 +56,7 @@
                   </div>
                 </div>
                 <div class="col-md-2 mb-1" v-if="tempArticle.tag[tempArticle.tag.length - 1] || !tempArticle.tag.length">
-                  <button class="btn btn-outline-primary btn-sm d-block w-100" type="button" @click="tempArticle.tag.push('')">
+                  <button type="button" class="btn btn-outline-primary btn-sm d-block w-100" @click="tempArticle.tag.push('')">
                     新增標籤
                   </button>
                 </div>

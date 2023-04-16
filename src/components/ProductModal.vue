@@ -32,27 +32,31 @@
                   <input type="file" id="customFile" class="form-control" ref="fileInput" @change="uploadFile" />
                 </div>
                 <h4>主要圖片</h4>
-                <img class="img-fluid" :src="tempProduct.imageUrl" />
+                <img class="img-fluid" :src="tempProduct.imageUrl" alt="產品圖片" />
               </div>
               <div>
                 <h4>其他圖片</h4>
-
                 <!-- 判斷tempProduct.imagesUrl是一個陣列 -->
                 <div v-if="Array.isArray(tempProduct.imagesUrl)">
                   <template v-for="(img, key) in tempProduct.imagesUrl" :key="key + 123">
                     <input type="text" class="form-control" v-model="tempProduct.imagesUrl[key]" />
-                    <img :src="tempProduct.imagesUrl[key]" alt="" class="img-fluid mb-2" />
+                    <img :src="tempProduct.imagesUrl[key]" alt="產品圖片" class="img-fluid mb-2" />
                   </template>
-
                   <!-- 判斷新增、刪除出現的時機 -->
                   <button
+                    type="button"
                     class="btn btn-outline-primary btn-sm d-block w-100"
                     @click="tempProduct.imagesUrl.push('')"
                     v-if="!tempProduct.imagesUrl.length || tempProduct.imagesUrl[tempProduct.imagesUrl.length - 1]"
                   >
                     新增圖片
                   </button>
-                  <button class="btn btn-outline-danger btn-sm d-block w-100" @click="tempProduct.imagesUrl.pop()" v-else>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-sm d-block w-100"
+                    @click="tempProduct.imagesUrl.pop()"
+                    v-else
+                  >
                     刪除圖片
                   </button>
                 </div>
@@ -65,7 +69,6 @@
                 <label for="notice" class="form-label text-danger pt-2">注意事項</label>
                 <input v-model="tempProduct.notice" id="notice" type="text" class="form-control" placeholder="請輸入注意事項" />
               </div>
-
               <div class="row">
                 <div class="mb-3 col-md-6">
                   <label for="category" class="form-label">分類</label>
@@ -76,7 +79,6 @@
                   <input v-model="tempProduct.unit" id="unit" type="text" class="form-control" placeholder="請輸入單位" />
                 </div>
               </div>
-
               <div class="row">
                 <div class="mb-3 col-md-6">
                   <label for="origin_price" class="form-label">原價</label>
@@ -102,7 +104,6 @@
                 </div>
               </div>
               <hr />
-
               <div class="mb-3">
                 <label for="content" class="form-label">產品內容</label>
                 <textarea
@@ -114,7 +115,6 @@
                 >
                 </textarea>
               </div>
-
               <div class="mb-3">
                 <label for="description" class="form-label">產品描述</label>
                 <textarea
@@ -126,7 +126,6 @@
                 >
                 </textarea>
               </div>
-
               <div class="mb-3">
                 <div class="form-check">
                   <input

@@ -8,6 +8,7 @@ const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 const cartStore = defineStore('cart', {
   state: () => ({
     cart: [], // 購物車列表
+    qtyMaxStatus: false,
   }),
   actions: {
     getCarts() {
@@ -28,6 +29,13 @@ const cartStore = defineStore('cart', {
           });
           hideLoading(); // 讀完資料關閉vue loading效果
         });
+    },
+    qtyMax(qty) {
+      if (qty === 30) {
+        this.qtyMaxStatus = true;
+      } else {
+        this.qtyMaxStatus = false;
+      }
     },
   },
   getters: {},

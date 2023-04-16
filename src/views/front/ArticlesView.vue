@@ -18,13 +18,12 @@
       </div>
     </div>
   </div>
-
   <div class="container py-5">
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <template v-for="article in articles" :key="article.id">
         <div class="col" v-if="article.isPublic">
           <div data-aos="zoom-in" class="card">
-            <img :src="article.imageUrl" height="350" class="card-img-top object-fit" />
+            <img :src="article.imageUrl" height="350" alt="文章圖片" class="card-img-top object-fit" />
             <div class="card-body">
               <h5 class="card-title">{{ article.title }}</h5>
               <div v-html="article.description"></div>

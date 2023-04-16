@@ -40,7 +40,10 @@
       </ul>
     </div>
   </nav>
-  <RouterView />
+  <!-- 將內容設定高度，固定footer在底部 -->
+  <div style="min-height: calc(100vh - 106px)">
+    <RouterView />
+  </div>
   <footer class="bg-primary">
     <div class="container text-center py-4">
       <p class="m-0 text-white letterSpacing">聯絡我們</p>

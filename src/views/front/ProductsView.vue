@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-9 text-center">
-        <h2 class="text-darkGreen fw-bold p-4 mb-0 hrPromotions">菜單</h2>
+        <h2 class="text-darkGreen fw-bold p-4 mb-0 hrPromotions">{{ category ? category : '菜單' }}</h2>
       </div>
     </div>
     <div class="row">
@@ -28,50 +28,57 @@
                 role="tab"
                 aria-controls="list-home"
                 @click="() => getProducts('所有餐點')"
+                :disabled="category === '所有餐點'"
               >
                 所有餐點
               </button>
             </li>
-
             <li>
-              <a
+              <button
+                type="button"
                 class="list-group-item list-group-item-action bg-primary bg-opacity-50 text-white"
                 id="list-home-list"
                 href="#"
                 role="tab"
                 aria-controls="list-home"
                 @click.prevent="() => getProducts('烤肉')"
-                >烤肉
-              </a>
+                :disabled="category === '烤肉'"
+              >
+                烤肉
+              </button>
             </li>
-
             <li>
-              <a
+              <button
+                type="button"
                 class="list-group-item list-group-item-action bg-primary bg-opacity-50 text-white"
                 id="list-home-list"
                 href="#"
                 role="tab"
                 aria-controls="list-home"
                 @click.prevent="() => getProducts('蔬菜')"
-                >蔬菜
-              </a>
+                :disabled="category === '蔬菜'"
+              >
+                蔬菜
+              </button>
             </li>
-
             <li>
-              <a
+              <button
+                type="button"
                 class="list-group-item list-group-item-action bg-primary text-white bg-opacity-50 bg-opacity-50 rounded-bottom"
                 id="list-home-list"
                 href="#"
                 role="tab"
                 aria-controls="list-home"
                 @click.prevent="() => getProducts('飲品')"
-                >飲品</a
+                :disabled="category === '飲品'"
               >
+                飲品
+              </button>
             </li>
             <li>
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1679043836381.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=FjesjB%2Fr%2B6JLipiNnzSJhxFxp9BCnE0pUrDOPhLo0ZqCrYmGIYRa4R5XZCGExe8UDjXtXVMWc4mMkK6HkfYnUzOMmlKAWGVrGhbIeHDm85YmfuFhXIpKfPj7ftWYQvUlOwKywETk59SFQKop%2FNq25asEYjq7PSDtSMRPfdRtLO0dZyYkT5bfHobi2%2BaA6QYe%2B5umgu8VvNG5V39LP3q92zv1cTaoCwq8I5dEt4YFrNIf4gAgwDqdH%2BEN979yv5bfD3zTkctlQcgJlcEtA5SOo36xOgcWzvprsFK%2Bu0G3F0PO5RQsFJ5xA9MGh%2Bz7zfL8X6gHFF8TbzpPm3%2FdjnmBtA%3D%3D"
-                alt=""
+                alt="烤肉圖片"
                 width="230"
                 height="120"
                 class="meat object-fit"
@@ -80,7 +87,7 @@
             <li>
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1679040934274.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=CQvxryEJfLZr33%2FoeREEo1zgbRg4n%2B7YuGVzPG6oQVy11nEDCjT0vAu330O%2FKir2tLtjpHgZ5Q9aCHO%2FBdWd3AbidIWXCNA03XKTKNSOA2nx%2B8%2F4J2Jt60kfsqbz7%2FPrRfDFOUFkchu7t0fK8ZhWNn8XNUs78%2BevFIIyWyDNMUz6s2CjUXbT2W%2BUpgSnTDYUMk9LfHs5ATzPCpDHaCUZDUGHwJs78cBSEv2M6RS2fxMcwxQTzvkNVYWynyz%2ByAzphpEalnVrq6gzLjy%2BQNXGOyo8U7lLECCqRunqXFByi2dyENRE6IXPMPgHeJWV%2BUKwYOjOxz4OkeigvemNo7Kh9Q%3D%3D"
-                alt=""
+                alt="烤肉架圖片"
                 width="250"
                 height="100"
                 class="fire object-fit"
@@ -89,7 +96,6 @@
           </ul>
         </div>
       </div>
-
       <div class="col-md-9">
         <div class="row my-4 g-4 mt-0">
           <div class="col-md-4 mt-0 mb-4" v-for="product in products" :key="product.id">
@@ -108,7 +114,6 @@
                 <RouterLink :to="`/product/${product.id}`" class="btn btn-outline-secondary w-100 mt-3">
                   查看更多產品細節</RouterLink
                 >
-
                 <!-- 點擊加入購物車時會先顯示不能再次點擊按鈕:disabled="addCartLoading===product.id" -->
                 <!-- @click="() => addToCart(product.id)"前面加入箭頭函式表示要點擊才執行(在JS邏輯才會正確)，沒有加入表示立刻執行 -->
                 <button
@@ -147,7 +152,7 @@ export default {
       addCartLoading: null, // 設定loading效果用的，點擊加入購物車會先將id傳入之後再清空
       currentPage: 1, // 做當前頁面使用
       page: {}, // 做分頁使用
-      category: {}, // 儲存分類使用
+      category: null, // 儲存分類使用
     };
   },
   methods: {
@@ -161,7 +166,7 @@ export default {
         url = `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/products?page=${page}&category=${category}`;
         this.category = category;
       } else if (category === '所有餐點') {
-        this.category = {};
+        this.category = '所有餐點';
       }
       this.$http
         .get(url)
@@ -186,16 +191,13 @@ export default {
       });
     },
     ...mapActions(cartStore, ['getCarts']),
-    // eslint-disable-next-line camelcase
-    addToCart(product_id, qty = 1) {
+    addToCart(productId, qty = 1) {
       // 需要傳入後端的資料格式，qty=1當沒有傳入該參數時，預設值為1
       const data = {
-        // eslint-disable-next-line camelcase
-        product_id,
+        product_id: productId,
         qty,
       };
-      // eslint-disable-next-line camelcase
-      this.addCartLoading = product_id; // 加入購物車先傳入id顯示loading效果用
+      this.addCartLoading = productId; // 加入購物車先傳入id顯示loading效果用
       this.$http
         .post(
           `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart`,

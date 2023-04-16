@@ -25,8 +25,10 @@
             </td>
             <td>
               <div class="btn-group">
-                <button class="btn btn-outline-primary btn-sm" @click="() => openCouponModal(false, item)">編輯</button>
-                <button class="btn btn-outline-danger btn-sm" @click="() => openDelCouponModal(item)">刪除</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" @click="() => openCouponModal(false, item)">
+                  編輯
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm" @click="() => openDelCouponModal(item)">刪除</button>
               </div>
             </td>
           </tr>
@@ -41,9 +43,9 @@
 <script>
 import { mapActions } from 'pinia';
 import Swal from 'sweetalert2';
-import DeleteModal from '../../components/DeleteModal.vue';
-import vueLoadingStore from '../../stores/vueLoadingStore';
-import CouponModal from '../../components/CouponModal.vue';
+import DeleteModal from '@/components/DeleteModal.vue';
+import vueLoadingStore from '@/stores/vueLoadingStore';
+import CouponModal from '@/components/CouponModal.vue';
 
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 

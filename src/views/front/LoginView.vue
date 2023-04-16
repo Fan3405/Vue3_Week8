@@ -26,7 +26,6 @@
         ></VueField>
         <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
       </div>
-
       <div class="mb-3">
         <label for="password" class="form-label fw-bold text-light">Password</label>
         <VueField
@@ -41,7 +40,6 @@
         ></VueField>
         <ErrorMessage name="password" class="invalid-feedback"></ErrorMessage>
       </div>
-
       <div class="text-end">
         <button type="submit" class="btn btn-lg btn-primary w-100 mt-3 fw-bold text-light">登入</button>
       </div>

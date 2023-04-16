@@ -51,7 +51,7 @@
       </tbody>
     </table>
 
-    <OrderModal ref="orderModal" :order="tempOrder" @update-order="updateOrder"></OrderModal>
+    <OrderModal ref="orderModal" :order="tempOrder" @update-order="updateOrder" />
     <!-- delProductModal刪除元件 -->
     <DeleteModal
       ref="delOrderModal"
@@ -59,22 +59,22 @@
       :delete-product="deleteOrder"
       :is-order="isOrder"
       :temp-order="tempOrder"
-    ></DeleteModal>
+    />
 
     <!-- 將註冊的元件以html標籤方式加入畫面就可顯示、
              用props將資料傳進來前面屬性要放內層自訂的名稱，後面值要放外層資料，但html不能使用大寫所以要寫成get-data、
              也可使用emit寫法@change-page="getData"，(props是傳資料、emit是傳事件) -->
-    <PaginationComponent :pages="page" :get-data="getOrders"></PaginationComponent>
+    <PaginationComponent :pages="page" :get-data="getOrders" />
   </div>
 </template>
 
 <script>
 import Swal from 'sweetalert2';
 import { mapActions } from 'pinia';
-import PaginationComponent from '../../components/PaginationComponent.vue';
-import DeleteModal from '../../components/DeleteModal.vue';
-import OrderModal from '../../components/OrderModal.vue';
-import vueLoadingStore from '../../stores/vueLoadingStore';
+import PaginationComponent from '@/components/PaginationComponent.vue';
+import DeleteModal from '@/components/DeleteModal.vue';
+import OrderModal from '@/components/OrderModal.vue';
+import vueLoadingStore from '@/stores/vueLoadingStore';
 
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 export default {

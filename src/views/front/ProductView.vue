@@ -18,7 +18,6 @@
       </div>
     </div>
   </div>
-
   <div class="container py-3" tabindex="-1" role="dialog" aria-hidden="true">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -56,7 +55,7 @@
                 class="mySwiper2"
               >
                 <swiper-slide v-for="image in imagesUrl" :key="image + '123'"
-                  ><img class="img-fluid" :src="image"
+                  ><img class="img-fluid" :src="image" alt="產品圖片"
                 /></swiper-slide>
               </swiper>
               <swiper
@@ -71,7 +70,7 @@
                 class="mySwiper"
               >
                 <swiper-slide v-for="image in imagesUrl" :key="image + '123'"
-                  ><img class="img-fluid" :src="image"
+                  ><img class="img-fluid" :src="image" alt="產品圖片"
                 /></swiper-slide>
               </swiper>
             </div>
@@ -87,16 +86,28 @@
               </div>
               <div>
                 <div class="input-group">
-                  <select name="" id="" class="form-select" v-model="qty">
+                  <select
+                    name=""
+                    id=""
+                    class="form-select"
+                    v-model="qty"
+                    :disabled="addCartLoading === product.id || qtyMaxStatus"
+                  >
                     <option :value="i" v-for="i in 30" :key="`${i}123`">
                       {{ i }}
                     </option>
                   </select>
-                  <button type="button" class="btn btn-primary" @click="addToCart(product.id, qty)">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    @click="addToCart(product.id, qty)"
+                    :disabled="addCartLoading === product.id || qtyMaxStatus"
+                  >
                     <span class="spinner-border spinner-border-sm" role="status" v-if="addCartLoading === product.id"></span>
                     加入購物車
                   </button>
                 </div>
+                <p v-if="qtyMaxStatus" class="fw-bold text-danger">此商品於購物車內已達數量上限</p>
               </div>
             </div>
             <!-- col-sm-6 end -->
@@ -138,7 +149,7 @@ import 'swiper/css/thumbs';
 import {
   FreeMode, Navigation, Thumbs, Autoplay,
 } from 'swiper';
-import { mapActions } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import cartStore from '../../stores/cartStore';
 import vueLoadingStore from '../../stores/vueLoadingStore';
 
@@ -186,16 +197,13 @@ export default {
         });
     },
     ...mapActions(cartStore, ['getCarts']),
-    // eslint-disable-next-line camelcase
-    addToCart(product_id, qty = 1) {
+    addToCart(productId, qty = 1) {
       // 需要傳入後端的資料格式，qty=1當沒有傳入該參數時，預設值為1
       const data = {
-        // eslint-disable-next-line camelcase
-        product_id,
+        product_id: productId,
         qty,
       };
-      // eslint-disable-next-line camelcase
-      this.addCartLoading = product_id; // 加入購物車先傳入id顯示loading效果用
+      this.addCartLoading = productId; // 加入購物車先傳入id顯示loading效果用
       this.$http
         .post(
           `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart`,
@@ -206,12 +214,7 @@ export default {
           Swal.fire({
             title: response.data.message,
             icon: 'success',
-            confirmButtonText: 'OK到購物車',
-          }).then((result) => {
-            // isConfirmed是SweetAlert2的一個回調函數方法，當彈出對話框中的確認按鈕被點擊時可以執行後續動作
-            if (result.isConfirmed) {
-              this.$router.push('/cart'); // 加入購物車後轉址到cart購物車頁面
-            }
+            confirmButtonText: 'OK',
           });
           this.addCartLoading = null; // 清除id下次點擊比對id才能顯示loading效果
         })
@@ -223,6 +226,9 @@ export default {
           });
         });
     },
+  },
+  computed: {
+    ...mapState(cartStore, ['qtyMaxStatus']),
   },
   mounted() {
     this.getProduct();

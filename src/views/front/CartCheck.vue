@@ -22,7 +22,6 @@
           ></VueField>
           <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
         </div>
-
         <div class="mb-3">
           <label for="name" class="form-label">收件人姓名</label>
           <VueField
@@ -37,7 +36,6 @@
           ></VueField>
           <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
         </div>
-
         <div class="mb-3">
           <label for="tel" class="form-label">收件人電話</label>
           <VueField
@@ -52,7 +50,6 @@
           ></VueField>
           <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
         </div>
-
         <div class="mb-3">
           <label for="address" class="form-label">收件人地址</label>
           <VueField
@@ -67,7 +64,6 @@
           ></VueField>
           <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
         </div>
-
         <div class="mb-3">
           <label for="message" class="form-label">留言</label>
           <textarea id="message" class="form-control" cols="30" rows="10" v-model="data.message"></textarea>
@@ -80,17 +76,11 @@
           </button>
         </div>
       </VueForm>
-
       <div class="col-md-5 RWD-padding">
         <div class="border border-primary p-4 mb-4 bg-primary bg-opacity-50 shadow">
           <h4 class="mb-4">Order Detail</h4>
           <div v-for="item in cart.carts" :key="item.id" class="d-flex mt-2">
-            <img
-              :src="item.product.imageUrl"
-              :alt="item.product.title"
-              class=""
-              style="width: 160px; height: 50px; object-fit: cover"
-            />
+            <img :src="item.product.imageUrl" :alt="item.product.title" style="width: 160px; height: 50px; object-fit: cover" />
             <div class="w-100 ms-2">
               <div class="d-flex justify-content-between fw-bold">
                 <p class="mb-0">{{ item.product.title }}</p>

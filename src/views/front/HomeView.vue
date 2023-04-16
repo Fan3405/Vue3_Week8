@@ -6,7 +6,7 @@
         <img
           style="min-height: calc(100vh - 106px)"
           src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
+          alt="烤肉圖片"
           class="img-fluid w-100 object-fit RWD-img"
         />
       </div>
@@ -14,7 +14,7 @@
         <img
           style="max-height: 420px"
           src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1678638078992.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=R%2BZGbHRhmf6KsCIRCt8bEsrbyTlwwE4yS2Alio5qwo5fb8xgQlTUMFaTJxVcELPqCWDtld8sCkziAUPpsMUqYqVT5%2BG1L8IPAkaB5A1%2FSJx0YFQvoFqQU1pKzFv07oWtS%2FWighTF8L5X09xShz2EimVT4owO%2BnU0IJkRkylqD7Nb8N2UAjoCCBPYtfqoqHQivDvKO9JVdQA32H3VEe7OUzTFlydtrkBMO%2F7JJaFL9MiA1i1TylAdw5Qb5rg0qzvch4VApCpcnhJjxZ1QVx%2FgH8oD3h8lI0Cgn1wuDhkVipAvQDXmsVCTIGVSSaOyZ95bd7d5yynMbgfxQBy33qVYQQ%3D%3D"
-          alt=""
+          alt="文字圖片"
           class="img-fluid object-fit RWD-img"
         />
         <a href="#info" class="btn btn-primary w-100 fw-bold text-light"
@@ -65,10 +65,8 @@
       <h2 class="text-center text-darkGreen pt-6 fw-bold">點燒烤</h2>
       <p class="text-center pt-2 pb-6 mb-0">解決肚子餓、省荷包、放輕鬆</p>
     </div>
-
     <div class="container overflow-hidden text-center my-2 pt-3 bg-primary bg-opacity-50">
       <h2 class="text-darkGreen fw-bold p-5 mb-0 hrService">選擇點燒烤好處?</h2>
-
       <div class="row">
         <div data-aos="fade-up-right" data-aos-offset="180" data-aos-once="false" class="col-md-6">
           <img
@@ -83,7 +81,6 @@
           <p class="lh-lg">無論是想和家人或朋友在家吃飯聊天、或是想自己在家喝點酒放鬆心情都很適合點燒烤吃</p>
         </div>
       </div>
-
       <div class="row flex-row-reverse justify-content-between mt-4">
         <div data-aos="fade-up-left" data-aos-offset="180" data-aos-once="false" class="col-md-6">
           <img
@@ -100,7 +97,6 @@
           </p>
         </div>
       </div>
-
       <div class="row mt-4">
         <div data-aos="fade-up-right" data-aos-offset="180" data-aos-once="false" class="col-md-6">
           <img
@@ -115,12 +111,10 @@
           <p class="lh-lg">【食材的新鮮程度影響著口感和營養價值，所以我們每天堅持使用新鮮的食材來烹製每一道菜品】</p>
         </div>
       </div>
-
       <RouterLink to="/products" class="nav-link"
         ><button id="info" type="button" class="btn btn-primary btn-lg m-4 text-light fw-bold">查看完整菜單</button></RouterLink
       >
     </div>
-
     <div class="container overflow-hidden pb-4">
       <h2 class="text-darkGreen text-center fw-bold p-5 mb-0 hrService">熱門菜色</h2>
       <!-- :breakpoints設定，螢幕大於768顯示三個產品，小於768則顯示一個 -->
@@ -171,7 +165,6 @@
               <RouterLink :to="`/product/${product.id}`" class="btn btn-outline-secondary w-100 mt-3">
                 查看更多產品細節</RouterLink
               >
-
               <!-- 點擊加入購物車時會先顯示不能再次點擊按鈕:disabled="addCartLoading===product.id" -->
               <!-- @click="() => addToCart(product.id)"前面加入箭頭函式表示要點擊才執行(在JS邏輯才會正確)，沒有加入表示立刻執行 -->
               <button
@@ -194,6 +187,7 @@
         <i class="bi bi-arrow-up-circle text-white arrowUp">TOP</i>
         <img
           style="height: 50px"
+          alt="烤肉圖片"
           src="https://storage.googleapis.com/vue-course-api.appspot.com/zxcv123/1678695186672.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ZXhdShiWihGliXQGXdmLxYVSYirttV7%2ByeJ6%2FtrmDpwiIvJXQA8zVZEcTKS3egpDq%2F6VHs%2B7y4qVp7ijEYlnIwbjBLUNc6YImnzlvw8NO6ZxwWoSAxg4L%2FhKQvOeCfhrEnhyHtpoSVqksSWyY0BylhFXFnKJToFmQU2yMjzUqV2t8f8SJSNxqzqdtRWbUoJUgac%2BD3buGQToVo3VloEzuNOZBdTQ64%2FHbfXJMEx4ysC46OuMFdXPBMqigQNIuZM5F7ZeF8Ckrir4DXrRWrbbGlvHZFt6qASEAYcwIU%2BNP4Pcg%2FFOMFgGSQttuJ4AAtZlWZJRqdVjyD5bYUUJIPFYUg%3D%3D"
         />
       </button>
@@ -202,6 +196,9 @@
 </template>
 
 <script>
+// 引入bootstrap icon
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -265,16 +262,13 @@ export default {
         });
     },
     ...mapActions(cartStore, ['getCarts']),
-    // eslint-disable-next-line camelcase
-    addToCart(product_id, qty = 1) {
+    addToCart(productId, qty = 1) {
       // 需要傳入後端的資料格式，qty=1當沒有傳入該參數時，預設值為1
       const data = {
-        // eslint-disable-next-line camelcase
-        product_id,
+        product_id: productId,
         qty,
       };
-      // eslint-disable-next-line camelcase
-      this.addCartLoading = product_id; // 加入購物車先傳入id顯示loading效果用
+      this.addCartLoading = productId; // 加入購物車先傳入id顯示loading效果用
       this.$http
         .post(
           `${VITE_APP_URL}v2/api/${VITE_APP_PATH}/cart`,

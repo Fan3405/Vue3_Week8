@@ -35,17 +35,18 @@
         </tr>
       </tbody>
     </table>
-    <ArticleModal ref="articleModal" :article="tempArticle" :is-new="isNew" @update-article="updateArticle"></ArticleModal>
+    <ArticleModal ref="articleModal" :article="tempArticle" :is-new="isNew" @update-article="updateArticle" />
     <DeleteModal :tempArticle="tempArticle" ref="delModal" :delete-product="delArticle" />
   </div>
 </template>
 
 <script>
+// @參考https://israynotarray.com/vue/20190510/86469050/
 import Swal from 'sweetalert2';
 import { mapActions } from 'pinia';
 import ArticleModal from '@/components/ArticleModal.vue';
-import DeleteModal from '../../components/DeleteModal.vue';
-import vueLoadingStore from '../../stores/vueLoadingStore';
+import DeleteModal from '@/components/DeleteModal.vue';
+import vueLoadingStore from '@/stores/vueLoadingStore';
 
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 

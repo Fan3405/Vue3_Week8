@@ -9,7 +9,6 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-
       <li
         class="page-item"
         :class="{ active: page === pages.current_page }"
@@ -26,7 +25,6 @@
           <a v-else class="page-link" href="#" @click.prevent="() => getData(page)">{{ page }}</a>
         </template>
       </li>
-
       <li class="page-item" :class="{ disabled: !pages.has_next }">
         <a v-if="category" class="page-link" aria-label="Next" @click="() => getData(category, pages.current_page + 1)">
           <span aria-hidden="true">&raquo;</span>
